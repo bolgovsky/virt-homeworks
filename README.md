@@ -10,7 +10,7 @@
 
 ## Модуль 5. Виртуализация
 
-5.1. [Основы виртуализации](https://github.com/netology-code/virt-homeworks/tree/master/05-virt-01-basics)
+5.1. [Основы виртуализации](https://github.com/bolgovsky/virt-homeworks/tree/master/05-virt-01-basics)
 
 5.2. [Системы управления виртуализацией](https://github.com/netology-code/virt-homeworks/tree/master/05-virt-02-control-systems)
 
