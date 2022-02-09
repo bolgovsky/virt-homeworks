@@ -14,7 +14,7 @@
 
 5.2. [Системы управления виртуализацией](https://github.com/bolgovsky/virt-homeworks/blob/master/05-virt-02-control-systems)
 
-5.3. [Контейнеризация на примере Docker](https://github.com/netology-code/virt-homeworks/tree/master/05-virt-03-docker-usage)
+5.3. [Контейнеризация на примере Docker](https://github.com/bolgovsky/virt-homeworks/tree/master/05-virt-03-docker-usage)
 
 5.4. [Практические навыки работы с Docker](https://github.com/netology-code/virt-homeworks/tree/master/05-virt-04-docker-practical-skills)
 
