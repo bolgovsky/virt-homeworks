@@ -18,7 +18,7 @@
 
 5.4. [Практические навыки работы с Docker](https://github.com/bolgovsky/virt-homeworks/tree/master/05-virt-04-docker-compose)
 
-5.5. [Оркестрация кластером Docker контейнеров на примере Docker Swarm] (https://github.com/bolgovsky/virt-homeworks/tree/master/05-virt-05-docker-swarm)
+5.5. [Оркестрация кластером Docker контейнеров на примере Docker Swarm](https://github.com/bolgovsky/virt-homeworks/tree/master/05-virt-05-docker-swarm)
 
 ## Модуль 6. Администрирование баз данных
 
