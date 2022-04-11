@@ -24,9 +24,9 @@
 
 6.1. [Типы и структура СУБД](https://github.com/bolgovsky/virt-homeworks/tree/master/06-db-01-basics)
 
-6.2. [SQL](https://github.com/netology-code/virt-homeworks/tree/master/06-db-02-sql)
+6.2. [SQL](https://github.com/bolgovsky/virt-homeworks/tree/master/06-db-02-sql)
 
-6.3. [MySQL](https://github.com/netology-code/virt-homeworks/tree/master/06-db-03-mysql)
+6.3. [MySQL](https://github.com/bolgovsky/virt-homeworks/tree/master/06-db-03-mysql)
 
 6.4. [PostgreSQL](https://github.com/netology-code/virt-homeworks/tree/master/06-db-04-postgresql)
 
