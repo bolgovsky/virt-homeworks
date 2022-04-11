@@ -1,6 +1,6 @@
 # Домашнее задание к занятию "6.3. MySQL"
 
-Для понимания что как делалось (для себя) прилагаю файл (step-by-step.txt)[].
+Для понимания что как делалось (для себя) прилагаю файл [step-by-step.txt](https://github.com/bolgovsky/virt-homeworks/blob/master/06-db-03-mysql/step-by-step.txt).
 
 ## Задача 1
 
