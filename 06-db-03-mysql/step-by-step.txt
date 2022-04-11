@@ -1,0 +1,302 @@
+PS C:\Users\Δενθρ> docker run -it --name my-sql -v c:\mount\data\:/data -e MYSQL_ROOT_PASSWORD=72540 -d mysql
+c182bbf02764deb06f49010a44ff0f06923402a6942b4edc9dc756930f252af2
+
+
+PS C:\Users\Δενθρ> docker exec -it c182bbf02764 bash
+root@c182bbf02764:/#
+
+
+root@c182bbf02764:/# mysql -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 12
+Server version: 8.0.28 MySQL Community Server - GPL
+...
+
+
+###1
+
+
+mysql> status
+--------------
+mysql  Ver 8.0.28 for Linux on x86_64 (MySQL Community Server - GPL)
+
+Connection id:          12
+Current database:
+Current user:           root@localhost
+SSL:                    Not in use
+Current pager:          stdout
+Using outfile:          ''
+Using delimiter:        ;
+Server version:         8.0.28 MySQL Community Server - GPL
+Protocol version:       10
+Connection:             Localhost via UNIX socket
+Server characterset:    utf8mb4
+Db     characterset:    utf8mb4
+Client characterset:    latin1
+Conn.  characterset:    latin1
+UNIX socket:            /var/run/mysqld/mysqld.sock
+Binary data as:         Hexadecimal
+Uptime:                 1 hour 21 min 21 sec
+
+Threads: 2  Questions: 5  Slow queries: 0  Opens: 118  Flush tables: 3  Open tables: 37  Queries per second avg: 0.001
+--------------
+
+
+root@c182bbf02764:/data# mysql -u root -p test_db<test_dump.sql
+Enter password:
+ERROR 1049 (42000): Unknown database 'test_db'
+
+mysql> create database test_db;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use test_db;
+Database changed
+mysql> exit
+
+
+
+
+root@c182bbf02764:/data# mysql -u root -p test_db<test_dump.sql
+Enter password:
+root@c182bbf02764:/data# mysql -p
+Enter password:
+...
+
+mysql> use test_db
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| test_db            |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> show tables;
++-------------------+
+| Tables_in_test_db |
++-------------------+
+| orders            |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from orders;
++----+-----------------------+-------+
+| id | title                 | price |
++----+-----------------------+-------+
+|  1 | War and Peace         |   100 |
+|  2 | My little pony        |   500 |
+|  3 | Adventure mysql times |   300 |
+|  4 | Server gravity falls  |   300 |
+|  5 | Log gossips           |   123 |
++----+-----------------------+-------+
+5 rows in set (0.00 sec)
+
+
+
+
+###1
+mysql> select * from orders where price>300;
++----+----------------+-------+
+| id | title          | price |
++----+----------------+-------+
+|  2 | My little pony |   500 |
++----+----------------+-------+
+1 row in set (0.00 sec)
+
+
+
+
+
+###2 
+mysql> create user 'test'@'localhost' identified with mysql_native_password by 'test-pass' 
+with 
+MAX_QUERIES_PER_HOUR 100 
+PASSWORD EXPIRE INTERVAL 180 DAY 
+FAILED_LOGIN_ATTEMPTS 3 
+ATTRIBUTE '{"fname":"James","lname":"Pretty"}';
+Query OK, 0 rows affected (0.01 sec)
+
+
+
+mysql> grant select on test_db.orders to 'test'@'localhost'
+    -> ;
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+
+
+mysql> select * from  INFORMATION_SCHEMA.USER_ATTRIBUTES where user='test';
++------+-----------+---------------------------------------+
+| USER | HOST      | ATTRIBUTE                             |
++------+-----------+---------------------------------------+
+| test | localhost | {"fname": "James", "lname": "Pretty"} |
++------+-----------+---------------------------------------+
+1 row in set (0.00 sec)
+
+mysql>
+
+
+
+###3
+mysql> set profiling=1
+    -> ;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+
+
+
+mysql> use test_db;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables ;
++-------------------+
+| Tables_in_test_db |
++-------------------+
+| orders            |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> SHOW PROFILES;
++----------+------------+-------------------+
+| Query_ID | Duration   | Query             |
++----------+------------+-------------------+
+|        1 | 0.00058550 | show engines      |
+|        2 | 0.00008900 | show tables       |
+|        3 | 0.00038700 | SELECT DATABASE() |
+|        4 | 0.00148400 | show databases    |
+|        5 | 0.00096775 | show tables       |
+|        6 | 0.00140325 | show tables       |
++----------+------------+-------------------+
+6 rows in set, 1 warning (0.00 sec)
+
+mysql> show tables ;
++-------------------+
+| Tables_in_test_db |
++-------------------+
+| orders            |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> show tables ;
++-------------------+
+| Tables_in_test_db |
++-------------------+
+| orders            |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> show tables ;
++-------------------+
+| Tables_in_test_db |
++-------------------+
+| orders            |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> SHOW PROFILES;
++----------+------------+-------------------+
+| Query_ID | Duration   | Query             |
++----------+------------+-------------------+
+|        1 | 0.00058550 | show engines      |
+|        2 | 0.00008900 | show tables       |
+|        3 | 0.00038700 | SELECT DATABASE() |
+|        4 | 0.00148400 | show databases    |
+|        5 | 0.00096775 | show tables       |
+|        6 | 0.00140325 | show tables       |
+|        7 | 0.00108400 | show tables       |
+|        8 | 0.00149650 | show tables       |
+|        9 | 0.00196700 | show tables       |
++----------+------------+-------------------+
+9 rows in set, 1 warning (0.00 sec)
+
+
+
+###3
+mysql>  show table status from test_db like 'orders'\G;
+*************************** 1. row ***************************
+           Name: orders
+         Engine: InnoDB
+        Version: 10
+     Row_format: Dynamic
+           Rows: 5
+ Avg_row_length: 3276
+    Data_length: 16384
+Max_data_length: 0
+   Index_length: 0
+      Data_free: 0
+ Auto_increment: 6
+    Create_time: 2022-04-11 11:53:03
+    Update_time: 2022-04-11 11:53:03
+     Check_time: NULL
+      Collation: utf8mb4_0900_ai_ci
+       Checksum: NULL
+ Create_options:
+        Comment:
+1 row in set (0.01 sec)
+
+
+# write all in UpperLowerCase as KEYWORD!!! MyISAM / InnoDB
+
+mysql> ALTER TABLE orders ENGINE = MyISAM;
+Query OK, 5 rows affected (0.03 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from orders;
+...
+
+mysql> ALTER TABLE orders ENGINE = InnoDB;
+Query OK, 5 rows affected (0.03 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from orders;
+...
+
+
+mysql> show profiles;
++----------+------------+----------------------------------------------+
+| Query_ID | Duration   | Query                                        |
++----------+------------+----------------------------------------------+
+
+|       28 | 0.02585950 | ALTER TABLE orders ENGINE = MyISAM           |
+|       29 | 0.00073000 | select * from orders                         |
+|       30 | 0.02728775 | ALTER TABLE orders ENGINE = InnoDB           |
+|       31 | 0.00067575 | select * from orders                         |
++----------+------------+----------------------------------------------+
+15 rows in set, 1 warning (0.00 sec)
+
+
+
+###4
+/etc/mysql/mysql.cnf
+
+[mysql]
+# InnoDB variables
+
+#1
+innodb_flush_method = O_DSYNC
+#2
+innodb_file_per_table;
+#3
+innodb_log_buffer_size = 1MB;
+#4
+#find 30% physical RAM
+root@c182bbf02764:/etc/mysql/conf.d# grep MemTotal /proc/meminfo | awk '{print $2 / 1024/100*30}'
+592.589
+innodb_buffer_pool_size=593MB;
+#5
+innodb_log_file_size=100MB;
+
+
+/etc/init.d/mysql stop
+/etc/init.d/mysql start
