@@ -1,0 +1,609 @@
+c:\vm\es>docker build --tag=myelastic .
+[+] Building 2.8s (3/3) FINISHED
+ => [internal] load build definition from Dockerfile                                                               0.0s
+ => => transferring dockerfile: 191B                                                                               0.0s
+ => [internal] load .dockerignore                                                                                  0.0s
+ => => transferring context: 2B                                                                                    0.0s
+ => ERROR [internal] load metadata for docker.elastic.co/elasticsearch/elasticsearch:7.17.3                        2.7s
+------
+ > [internal] load metadata for docker.elastic.co/elasticsearch/elasticsearch:7.17.3:
+------
+failed to solve with frontend dockerfile.v0: failed to create LLB definition: failed to copy: httpReadSeeker: failed open: unexpected status code https://docker.elastic.co/v2/elasticsearch/elasticsearch/blobs/sha256:3c91aa69ae062dd312fbe54fa0d3e8e306e506f4e9bfbad702ae8ebc499fe7f2: 403 Forbidden
+
+c:\vm\es>docker build --tag=myelastic .
+[+] Building 88.7s (7/7) FINISHED
+ => [internal] load build definition from Dockerfile                                                               0.0s
+ => => transferring dockerfile: 32B                                                                                0.0s
+ => [internal] load .dockerignore                                                                                  0.0s
+ => => transferring context: 2B                                                                                    0.0s
+ => [internal] load metadata for docker.elastic.co/elasticsearch/elasticsearch:7.17.3                              2.3s
+ => [internal] load build context                                                                                  0.0s
+ => => transferring context: 266B                                                                                  0.0s
+ => [1/2] FROM docker.elastic.co/elasticsearch/elasticsearch:7.17.3@sha256:8734ac48c10ff836a6d0c3d600297b453cb38  86.2s
+ => => resolve docker.elastic.co/elasticsearch/elasticsearch:7.17.3@sha256:8734ac48c10ff836a6d0c3d600297b453cb389  0.0s
+ => => sha256:8734ac48c10ff836a6d0c3d600297b453cb389e85fd26bb4ccb3d5a5bde7e554 743B / 743B                         0.0s
+ => => sha256:78b2bc07e61f3891de3b2b6148443e3ed7b5a742e7a62a01a88df9990118546a 1.73kB / 1.73kB                     0.0s
+ => => sha256:6443e162346185648c5f91b32079e6aa55b05107797f27871a03f4fa47444ccb 9.81MB / 9.81MB                     5.7s
+ => => sha256:3c91aa69ae062dd312fbe54fa0d3e8e306e506f4e9bfbad702ae8ebc499fe7f2 9.02kB / 9.02kB                     0.0s
+ => => sha256:0b785679cd71daaa5bf89e7ea49988984bd2aede59346dc33ec2f0fdc95643b0 31.79MB / 31.79MB                   8.9s
+ => => sha256:4727ca960fae075c982ae7dac7958ac65a2b7bac8eb5bb663fb603bfb7d71b30 4.54kB / 4.54kB                     1.0s
+ => => sha256:140ffea0d6afc25ef95566ce49ca134f15d7a3529e621689adc17f90a1abd0ff 338.13MB / 338.13MB                78.1s
+ => => sha256:fe2575179dad30ae4da6e04353e40519b01de079c6a94acdc39a46114c7c6927 10.16kB / 10.16kB                   6.0s
+ => => sha256:67742bcf2c7acee933b101847f110d8a50fa42ba3901ee13bf683ab06f6bfc17 2.15kB / 2.15kB                     6.4s
+ => => sha256:b530e2c1e92cc150b98c3700a6c191ca44890596f4df253c5a8f54c62be5dc24 211.30kB / 211.30kB                 6.8s
+ => => sha256:0b70e24ef0773fc91c2b198925096b71d7b030bf6bec13e0d3f8a3648123032d 422B / 422B                         7.2s
+ => => sha256:16176e71f423576cc5a71c1225621fc1f15e2ad6c4c806fb9fa049f53bc14063 109.53kB / 109.53kB                 7.6s
+ => => extracting sha256:0b785679cd71daaa5bf89e7ea49988984bd2aede59346dc33ec2f0fdc95643b0                          2.0s
+ => => extracting sha256:6443e162346185648c5f91b32079e6aa55b05107797f27871a03f4fa47444ccb                          0.6s
+ => => extracting sha256:4727ca960fae075c982ae7dac7958ac65a2b7bac8eb5bb663fb603bfb7d71b30                          0.1s
+ => => extracting sha256:140ffea0d6afc25ef95566ce49ca134f15d7a3529e621689adc17f90a1abd0ff                          7.5s
+ => => extracting sha256:fe2575179dad30ae4da6e04353e40519b01de079c6a94acdc39a46114c7c6927                          0.0s
+ => => extracting sha256:67742bcf2c7acee933b101847f110d8a50fa42ba3901ee13bf683ab06f6bfc17                          0.0s
+ => => extracting sha256:b530e2c1e92cc150b98c3700a6c191ca44890596f4df253c5a8f54c62be5dc24                          0.1s
+ => => extracting sha256:0b70e24ef0773fc91c2b198925096b71d7b030bf6bec13e0d3f8a3648123032d                          0.0s
+ => => extracting sha256:16176e71f423576cc5a71c1225621fc1f15e2ad6c4c806fb9fa049f53bc14063                          0.0s
+ => [2/2] COPY --chown=elasticsearch:elasticsearch ./elasticsearch.yml /usr/share/elasticsearch/config/            0.1s
+ => exporting to image                                                                                             0.0s
+ => => exporting layers                                                                                            0.0s
+ => => writing image sha256:9f3803f1368ae9462960ca1b0aed1788c4cdc5987a0506edb2e15f599bc32f87                       0.0s
+ => => naming to docker.io/library/myelastic                                                                       0.0s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+
+c:\vm\es>docker image list
+REPOSITORY                                    TAG       IMAGE ID       CREATED         SIZE
+myelastic                                     latest    9f3803f1368a   2 minutes ago   613MB
+rocket.chat                                   latest    d55bb2f4cfc3   9 days ago      878MB
+registry.rocket.chat/rocketchat/rocket.chat   latest    93d1a291fe9f   10 days ago     953MB
+mysql                                         latest    667ee8fb158e   4 weeks ago     521MB
+postgres                                      latest    1ee973e26c65   4 weeks ago     376MB
+mongo                                         4.0       1f72653971e5   2 months ago    430MB
+docker/getting-started                        latest    bd9a9f733898   2 months ago    28.8MB
+hello-world                                   latest    feb5d9fea6a5   7 months ago    13.3kB
+
+# DOCKER PUSH
+docker tag elastic.1.0.0 bolgovsky/devops-elastic
+
+docker login docker.io
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username: bolgovsky
+Password:
+Login Succeeded
+
+docker push bolgovsky/devops-elastic
+
+https://hub.docker.com/repository/docker/bolgovsky/devops-elastic
+
+
+docker exec  -it -p 9200  myelastic
+
+### ERROR
+
+ERROR: [2] bootstrap checks failed. You must address the points described in the following [2] lines before starting Elasticsearch.
+bootstrap check failure [1] of [2]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+bootstrap check failure [2] of [2]: the default discovery settings are unsuitable for production use; at least one of [discovery.seed_hosts, discovery.seed_providers, cluster.initial_master_nodes] must be configure
+
+
+#1 error powershell by administrator !!! (docker daemon througth docker-desktop app)
+Windows PowerShell
+(C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+Попробуйте новую кроссплатформенную оболочку PowerShell (https://aka.ms/pscore6)
+
+PS C:\Users\Денис> wsl -d docker-desktop
+DenisPC:/tmp/docker-desktop-root/mnt/host/c/Users/Денис# sysctl -w vm.max_map_count=262144
+vm.max_map_count = 262144
+DenisPC:/tmp/docker-desktop-root/mnt/host/c/Users/Денис# exit
+
+
+#2 error 
+RUN chown -R elasticsearch:elasticsearch /var/lib 
+
+https://www.elastic.co/guide/en/elasticsearch/reference/8.1/docker.html#_windows_with_docker_desktop_wsl_2_backend
+"
+For example, to prepare a local directory for storing data through a bind-mount:
+
+mkdir esdatadir
+chmod g+rwx esdatadir
+chgrp 0 esdatadir
+"
+
+
+
+
+### ANSWERS
+#1
+root@3f38ce04b876:/usr/share/elasticsearch# curl http://localhost:9200
+{
+  "name" : "netology_test",
+  "cluster_name" : "docker-cluster",
+  "cluster_uuid" : "SMEbRVHGSoC5WZMH-uhwjA",
+  "version" : {
+    "number" : "7.17.3",
+    "build_flavor" : "default",
+    "build_type" : "docker",
+    "build_hash" : "5ad023604c8d7416c9eb6c0eadb62b14e766caff",
+    "build_date" : "2022-04-19T08:11:19.070913226Z",
+    "build_snapshot" : false,
+    "lucene_version" : "8.11.1",
+    "minimum_wire_compatibility_version" : "6.8.0",
+    "minimum_index_compatibility_version" : "6.0.0-beta1"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+
+
+#2
+root@3f38ce04b876:/usr/share/elasticsearch# curl -X GET "http://localhost:9200/_cluster/health"
+{"cluster_name":"docker-cluster","status":"green","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":4,"active_shards":4,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":0,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":100.0}
+
+
+# CREATE INDEX
+root@3f38ce04b876:/usr/share/elasticsearch# curl -X PUT "localhost:9200/my-index-000001?pretty"
+{
+  "acknowledged" : true,
+  "shards_acknowledged" : true,
+  "index" : "my-index-000001"
+}
+root@3f38ce04b876:/usr/share/elasticsearch# curl -X PUT "localhost:9200/ind-1?pretty" -H 'Content-Type: application/json' -d'
+> {
+>   "settings": {
+>     "index": {
+>       "number_of_shards": 1,
+>       "number_of_replicas": 0
+>     }
+>   }
+> }
+> '
+{
+  "acknowledged" : true,
+  "shards_acknowledged" : true,
+  "index" : "ind-1"
+}
+root@3f38ce04b876:/usr/share/elasticsearch# curl -X PUT "localhost:9200/ind-2?pretty" -H 'Content-Type: application/json
+' -d'
+{
+  "settings": {
+    "index": {
+      "number_of_shards": 2,
+      "number_of_replicas": 1
+    }
+  }
+}
+'
+{
+  "acknowledged" : true,
+  "shards_acknowledged" : true,
+  "index" : "ind-2"
+}
+root@3f38ce04b876:/usr/share/elasticsearch# curl -X PUT "localhost:9200/ind-3?pretty" -H 'Content-Type: application/json
+' -d'
+{
+  "settings": {
+    "index": {
+      "number_of_shards": 4,
+      "number_of_replicas": 2
+    }
+  }
+}
+'
+{
+  "acknowledged" : true,
+  "shards_acknowledged" : true,
+  "index" : "ind-3"
+}
+
+
+
+# CLUSTER HEALTH
+
+root@3f38ce04b876:/usr/share/elasticsearch# curl -X GET "http://localhost:9200/_cluster/health"
+{"cluster_name":"docker-cluster","status":"yellow","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":12,"active_shards":12,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":11,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":52.17391304347826}
+
+root@3f38ce04b876:/usr/share/elasticsearch# curl -X GET "localhost:9200/_cat/indices/ind-*"
+green  open ind-1 Ksvr_fuETHiTq1-tnIN4Og 1 0 0 0 226b 226b
+yellow open ind-3 dGzG626qSRGT0pf7aSUEAA 4 2 0 0 904b 904b
+yellow open ind-2 IxDxbRLLTUGXIy75kkmWaw 2 1 0 0 452b 452b
+
+root@3f38ce04b876:/usr/share/elasticsearch# curl -X GET "localhost:9200/_cat/shards/ind-*"
+ind-3 1 p STARTED    0 226b 172.17.0.2 netology_test
+ind-3 1 r UNASSIGNED
+ind-3 1 r UNASSIGNED
+ind-3 2 p STARTED    0 226b 172.17.0.2 netology_test
+ind-3 2 r UNASSIGNED
+ind-3 2 r UNASSIGNED
+ind-3 3 p STARTED    0 226b 172.17.0.2 netology_test
+ind-3 3 r UNASSIGNED
+ind-3 3 r UNASSIGNED
+ind-3 0 p STARTED    0 226b 172.17.0.2 netology_test
+ind-3 0 r UNASSIGNED
+ind-3 0 r UNASSIGNED
+ind-1 0 p STARTED    0 226b 172.17.0.2 netology_test
+ind-2 1 p STARTED    0 226b 172.17.0.2 netology_test
+ind-2 1 r UNASSIGNED
+ind-2 0 p STARTED    0 226b 172.17.0.2 netology_test
+ind-2 0 r UNASSIGNED
+
+
+Сам ES считает, что кластер может находиться в трех состояниях:
+* зеленый — доступно требуемое количество копий каждого шарда каждого индекса
+* желтый — какие-то копии шарда либо находятся в состоянии миграции, либо не прикреплены к нодам
+* красный — часть индекса недоступна вообще
+
+* red - один или несколько primary шард unassigned;
+* yellow - все primary шарды в состоянии assigned. Часть secondary - шард в состоянии unassigned;
+* green - все шарды в состоянии assigned.
+
+"Желтые" индексы созданы с количеством реплик и шард больше фактически имеющихся. Кластер "желтый" потому, что количество unassigned_shards больше нуля.
+
+Example with reasons for unassigned shardsedit
+curl -X GET "localhost:9200/_cat/shards?h=index,shard,prirep,state,unassigned.reason&pretty"
+root@3f38ce04b876:/usr/share/elasticsearch# curl -X GET "localhost:9200/_cat/shards?h=index,shard,prirep,state,unassigned.reason&pretty"
+ind-2                                                         1 p STARTED
+ind-2                                                         1 r UNASSIGNED INDEX_CREATED
+ind-2                                                         0 p STARTED
+ind-2                                                         0 r UNASSIGNED INDEX_CREATED
+my-index-000001                                               0 p STARTED
+my-index-000001                                               0 r UNASSIGNED INDEX_CREATED
+.monitoring-es-7-2022.04.30                                   0 p STARTED
+ind-3                                                         1 p STARTED
+ind-3                                                         1 r UNASSIGNED INDEX_CREATED
+ind-3                                                         1 r UNASSIGNED INDEX_CREATED
+ind-3                                                         2 p STARTED
+ind-3                                                         2 r UNASSIGNED INDEX_CREATED
+ind-3                                                         2 r UNASSIGNED INDEX_CREATED
+ind-3                                                         3 p STARTED
+ind-3                                                         3 r UNASSIGNED INDEX_CREATED
+ind-3                                                         3 r UNASSIGNED INDEX_CREATED
+ind-3                                                         0 p STARTED
+ind-3                                                         0 r UNASSIGNED INDEX_CREATED
+ind-3                                                         0 r UNASSIGNED INDEX_CREATED
+.ds-.logs-deprecation.elasticsearch-default-2022.04.30-000001 0 p STARTED
+ind-1                                                         0 p STARTED
+.ds-ilm-history-5-2022.04.30-000001                           0 p STARTED
+.geoip_databases                                              0 p STARTED
+
+
+* INDEX_CREATED: это состояние отображается, когда API для создания индекса вызывает проблему.
+* CLUSTER_RECOVERED: это состояние отображается, когда для кластера выполняется полное восстановление данных.
+* INDEX_REOPENED: это состояние будет отображаться, когда индекс включен или отключен.
+* DANGLING_INDEX_IMPORTED: это состояние отображается, когда результат оборванного индекса не импортирован.
+* NEW_INDEX_RESTORED: это состояние отображается при восстановлении данных из снимка в новый индекс.
+* EXISTING_INDEX_RESTORED: это состояние будет отображаться, когда данные восстанавливаются из моментального снимка в отключенный индекс.
+* REPLICA_ADDED: это состояние отображается при явном добавлении осколков реплики.
+* ALLOCATION_FAILED: это состояние отображается при сбое назначения сегмента.
+* NODE_LEFT: это состояние отображается, когда узел, несущий сегмент, находится за пределами кластера.
+* ПОВТОРНАЯ ИНИЦИАЛИЗАЦИЯ: это состояние отображается, когда в процессе от перемещения сегмента до инициализации сегмента существуют неправильные операции (например, использование сегмента теневой реплики).
+* REROUTE_CANCELED: это состояние будет отображаться, когда назначение отменено, потому что маршрутизация отменена явно.
+* REALLOCATED_REPLICA: это указывает на то, что будет использоваться лучшее расположение реплики, а существующее назначение реплики будет отменено. В результате осколок не назначен.
+
+
+# DELETE INDEX
+curl -X DELETE "localhost:9200/my-index-000001?pretty"
+
+root@3f38ce04b876:/usr/share/elasticsearch# curl -X DELETE "localhost:9200/ind-*"
+{"acknowledged":true}
+
+root@3f38ce04b876:/usr/share/elasticsearch# curl -X GET "localhost:9200/_cat/indices/*"
+green open .geoip_databases            UuE0mFI0QzmRkcrqJhBa2A 1 0 40 0 37.7mb 37.7mb
+green open .monitoring-es-7-2022.04.30 b57bWyuVQxmGaTE74uQ7EQ 1 0 25 4  1.2mb  1.2mb
+
+
+# 3 SNAPSHOTS
+root@3f38ce04b876:/usr/share/elasticsearch# mkdir snapshots
+root@3f38ce04b876:/usr/share/elasticsearch# ls -l
+...
+drwxr-xr-x  2 root          root            4096 May  2 12:12 snapshots
+
+root@3f38ce04b876:/usr/share/elasticsearch# chown -R elastic snapshots/
+
+root@3f38ce04b876:/usr/share/elasticsearch# chown -R elasticsearch:elasticsearch snapshots/
+root@3f38ce04b876:/usr/share/elasticsearch# ls -l
+...
+drwxr-xr-x  2 elasticsearch elasticsearch   4096 May  2 12:12 snapshots
+
+curl -X PUT "localhost:9200/_snapshot/netology_backup" -H 'Content-Type: application/json' -d'
+{
+  "type": "fs",
+  "settings": {
+    "location": "/usr/share/elasticsearch/snapshots"
+  }
+}
+'
+
+{"error":{"root_cause":[{"type":"repository_exception","reason":"[netology_backup] location [/usr/share/elasticsearch/snapshots] doesn't match any of the locations specified by path.repo because this setting is empty"}],"type":"repository_exception","reason":"[netology_backup] failed to create repository","caused_by":{"type":"repository_exception","reason":"[netology_backup] location [/usr/share/elasticsearch/snapshots] doesn't match any of the locations specified by path.repo because this setting is empty"}},"status":500}root@3f38ce04b876:/usr/share/elasticsearch#
+
+# SOLVE ERROR - use 'path.repo' in elasticsearch.yml (for fs snapshots)
+Вы также можете использовать свою собственную инфраструктуру данных и предоставить общий репозиторий файловой системы (как в примере выше). 
+
+В этом случае перед регистрацией репозитория в состоянии кластера вы должны включить параметр path.repo в файл конфигурации config/elasticsearch.yml на каждом узле в вашем кластере. Значение этого параметра должно содержать путь к общей файловой системе, которая должна быть доступна на каждом узле.
+
+
+## add to Dockerfile 
+# RUN mkdir /usr/share/elasticsearch/snapshots
+# RUN chown -R elasticsearch:elasticsearch /usr/share/elasticsearch/snapshots
+
+## add to elasticsearch.yml
+# path.repo: /usr/share/elasticsearch/snapshots
+
+# rebuild docker image
+
+docker build elastic.1.0.1 .
+
+docker run -it -p 9200:9200 elastic.1.0.1
+
+root@0fc930d6feef:/usr/share/elasticsearch# curl -X PUT "localhost:9200/_snapshot/netology_backup" -H 'Content-Type: application/json' -d'
+> {
+>   "type": "fs",
+>   "settings": {
+>     "location": "/usr/share/elasticsearch/snapshots"
+>   }
+> }
+> '
+{"acknowledged":true}
+
+
+# 3
+curl -X PUT "localhost:9200/test?pretty" -H 'Content-Type: application/json' -d'
+{
+  "settings": {
+    "index": {
+      "number_of_shards": 1,  
+      "number_of_replicas": 0 
+    }
+  }
+}
+'
+{
+  "acknowledged" : true,
+  "shards_acknowledged" : true,
+  "index" : "test"
+}
+
+# 3 create snapshot
+root@0fc930d6feef:/usr/share/elasticsearch# curl -X PUT "localhost:9200/_snapshot/netology_backup/%3Cmy_snapshot_%7Bnow%2Fd%7D%3E?pretty"
+{
+  "accepted" : true
+}
+
+root@0fc930d6feef:/usr/share/elasticsearch/snapshots# ls -lha
+total 60K
+drwxr-xr-x 1 elasticsearch elasticsearch 4.0K May  2 12:48 .
+drwxrwxr-x 1 root          root          4.0K May  2 12:34 ..
+-rw-rw-r-- 1 elasticsearch root          1.7K May  2 12:48 index-0
+-rw-rw-r-- 1 elasticsearch root             8 May  2 12:48 index.latest
+drwxrwxr-x 7 elasticsearch root          4.0K May  2 12:48 indices
+-rw-rw-r-- 1 elasticsearch root           29K May  2 12:48 meta-L6vJE4L3TCShaQ1p7yWZxQ.dat
+-rw-rw-r-- 1 elasticsearch root           789 May  2 12:48 snap-L6vJE4L3TCShaQ1p7yWZxQ.dat
+
+# 3 delete 
+root@0fc930d6feef:/usr/share/elasticsearch/snapshots# curl -X DELETE "localhost:9200/test"
+{"acknowledged":true}
+
+
+
+# 3 create new index
+curl -X PUT "localhost:9200/test-2?pretty" -H 'Content-Type: application/json' -d'
+{
+  "settings": {
+    "index": {
+      "number_of_shards": 1,  
+      "number_of_replicas": 0 
+    }
+  }
+}
+'
+
+{
+  "acknowledged" : true,
+  "shards_acknowledged" : true,
+  "index" : "test-2"
+}
+
+# Приведите в ответе список индексов.
+root@0fc930d6feef:/usr/share/elasticsearch/snapshots# curl -X GET "localhost:9200/_cat/indices/*"
+green open test-2                      pKt2ovpiQQKGU7vrxakeHg 1 0   0   0    226b    226b
+green open .geoip_databases            pre6FFQBRPuOGvtT8zULeQ 1 0  40   0  37.7mb  37.7mb
+green open .monitoring-es-7-2022.05.02 cpuLhfiUQ2CtnK2ReZEnVA 1 0 604 323 922.8kb 922.8kb
+
+## 3 restore full cluster state
+# curl -X POST "localhost:9200/_snapshot/my_repository/my_snapshot/_restore?pretty"
+# first find my snapshot!
+root@0fc930d6feef:/usr/share/elasticsearch/snapshots# curl -X GET "localhost:9200/_snapshot/netology_backup/*"
+{"snapshots":[{"snapshot":"my_snapshot_2022.05.02","uuid":"L6vJE4L3TCShaQ1p7yWZxQ","repository":"netology_backup","version_id":7170399,"version":"7.17.3","indices":[".ds-ilm-history-5-2022.05.02-000001",".geoip_databases",".ds-.logs-deprecation.elasticsearch-default-2022.05.02-000001","test",".monitoring-es-7-2022.05.02"],"data_streams":["ilm-history-5",".logs-deprecation.elasticsearch-default"],"include_global_state":true,"state":"SUCCESS","start_time":"2022-05-02T12:48:09.877Z","start_time_in_millis":1651495689877,"end_time":"2022-05-02T12:48:11.078Z","end_time_in_millis":1651495691078,"duration_in_millis":1201,"failures":[],"shards":{"total":5,"failed":0,"successful":5},"feature_states":[{"feature_name":"geoip","indices":[".geoip_databases"]}]}],"total":1,"remaining":0}
+# or curl -X GET "localhost:9200/_snapshot/netology_backup/*?verbose=false&pretty"
+root@0fc930d6feef:/usr/share/elasticsearch/snapshots# curl -X GET "localhost:9200/_snapshot/netology_backup/*?verbose=false&pretty"
+{
+  "snapshots" : [
+    {
+      "snapshot" : "my_snapshot_2022.05.02",
+      "uuid" : "L6vJE4L3TCShaQ1p7yWZxQ",
+      "repository" : "netology_backup",
+      "indices" : [
+        ".ds-.logs-deprecation.elasticsearch-default-2022.05.02-000001",
+        ".ds-ilm-history-5-2022.05.02-000001",
+        ".geoip_databases",
+        ".monitoring-es-7-2022.05.02",
+        "test"
+      ],
+      "data_streams" : [ ],
+      "state" : "SUCCESS"
+    }
+  ],
+  "total" : 1,
+  "remaining" : 0
+}
+
+root@0fc930d6feef:/usr/share/elasticsearch/snapshots# curl -X POST "localhost:9200/_snapshot/netology_backup/my_snapshot_2022.05.02/_restore?pretty"
+{
+  "error" : {
+    "root_cause" : [
+      {
+        "type" : "snapshot_restore_exception",
+        "reason" : "[netology_backup:my_snapshot_2022.05.02/L6vJE4L3TCShaQ1p7yWZxQ] cannot restore index [.geoip_databases] because an open index with same name already exists in the cluster. Either close or delete the existing index or restore the index under a different name by providing a rename pattern and replacement name"
+      }
+    ],
+    "type" : "snapshot_restore_exception",
+    "reason" : "[netology_backup:my_snapshot_2022.05.02/L6vJE4L3TCShaQ1p7yWZxQ] cannot restore index [.geoip_databases] because an open index with same name already exists in the cluster. Either close or delete the existing index or restore the index under a different name by providing a rename pattern and replacement name"
+  },
+  "status" : 500
+}
+
+# ok, close index '.geoip_databases' how to write in manual
+# 1
+curl -X PUT "localhost:9200/_cluster/settings?pretty" -H 'Content-Type: application/json' -d'
+{
+  "persistent": {
+    "ingest.geoip.downloader.enabled": false
+  }
+}
+'
+# 2
+curl -X POST "localhost:9200/_ilm/stop?pretty"
+# 3
+curl -X POST "localhost:9200/_ml/set_upgrade_mode?enabled=true&pretty"
+# 4 
+curl -X PUT "localhost:9200/_cluster/settings?pretty" -H 'Content-Type: application/json' -d'
+{
+  "persistent": {
+    "xpack.monitoring.collection.enabled": false
+  }
+}
+'
+# 5
+curl -X POST "localhost:9200/_watcher/_stop?pretty"
+
+root@0fc930d6feef:/usr/share/elasticsearch/snapshots# curl -X POST "localhost:9200/_watcher/_stop?pretty"
+{
+  "acknowledged" : true
+}
+root@0fc930d6feef:/usr/share/elasticsearch/snapshots# curl -X POST "localhost:9200/_snapshot/netology_backup/my_snapshot_2022.05.02/_restore?pretty"
+{
+  "error" : {
+    "root_cause" : [
+      {
+        "type" : "snapshot_restore_exception",
+        "reason" : "[netology_backup:my_snapshot_2022.05.02/L6vJE4L3TCShaQ1p7yWZxQ] cannot restore index [.ds-.logs-deprecation.elasticsearch-default-2022.05.02-000001] because an open index with same name already exists in the cluster. Either close or delete the existing index or restore the index under a different name by providing a rename pattern and replacement name"
+      }
+    ],
+    "type" : "snapshot_restore_exception",
+    "reason" : "[netology_backup:my_snapshot_2022.05.02/L6vJE4L3TCShaQ1p7yWZxQ] cannot restore index [.ds-.logs-deprecation.elasticsearch-default-2022.05.02-000001] because an open index with same name already exists in the cluster. Either close or delete the existing index or restore the index under a different name by providing a rename pattern and replacement name"
+  },
+  "status" : 500
+}
+
+# NO RESULT - CLOSE ALL INDEX by close index API
+root@0fc930d6feef:/usr/share/elasticsearch/snapshots# curl -X POST  "localhost:9200/.*/_close?pretty"
+{
+  "acknowledged" : true,
+  "shards_acknowledged" : true,
+  "indices" : {
+    ".ds-ilm-history-5-2022.05.02-000001" : {
+      "closed" : true
+    },
+    ".ds-.logs-deprecation.elasticsearch-default-2022.05.02-000001" : {
+      "closed" : true
+    },
+    ".monitoring-es-7-2022.05.02" : {
+      "closed" : true
+    }
+  }
+}
+
+
+# restore
+root@0fc930d6feef:/usr/share/elasticsearch/snapshots# curl -X POST "localhost:9200/_snapshot/netology_backup/my_snapshot_2022.05.02/_restore?pretty"
+{
+  "accepted" : true
+}
+
+Приведите в ответе запрос к API восстановления и итоговый список индексов.
+root@0fc930d6feef:/usr/share/elasticsearch/snapshots# curl -X GET "localhost:9200/_cat/indices/*"
+green open test-2                      pKt2ovpiQQKGU7vrxakeHg 1 0   0   0    226b    226b
+green open .geoip_databases            34EnSqi9SFejlwd-YU9cfg 1 0  40   0  37.7mb  37.7mb
+green open test                        ZG5SID8jRJ6HKVNcgjm4nQ 1 0   0   0    226b    226b
+green open .monitoring-es-7-2022.05.02 cpuLhfiUQ2CtnK2ReZEnVA 1 0 604 323 572.2kb 572.2kb
+
+
+
+root@0fc930d6feef:/usr/share/elasticsearch/snapshots# curl -X GET "localhost:9200/_cluster/health?pretty"
+{
+  "cluster_name" : "docker-cluster",
+  "status" : "green",
+  "timed_out" : false,
+  "number_of_nodes" : 1,
+  "number_of_data_nodes" : 1,
+  "active_primary_shards" : 6,
+  "active_shards" : 6,
+  "relocating_shards" : 0,
+  "initializing_shards" : 0,
+  "unassigned_shards" : 0,
+  "delayed_unassigned_shards" : 0,
+  "number_of_pending_tasks" : 0,
+  "number_of_in_flight_fetch" : 0,
+  "task_max_waiting_in_queue_millis" : 0,
+  "active_shards_percent_as_number" : 100.0
+}
+
+
+root@0fc930d6feef:/usr/share/elasticsearch/snapshots# curl -X GET "localhost:9200/test/_recovery?pretty"
+{
+  "test" : {
+    "shards" : [
+      {
+        "id" : 0,
+        "type" : "SNAPSHOT",
+        "stage" : "DONE",
+        "primary" : true,
+        "start_time_in_millis" : 1651498968257,
+        "stop_time_in_millis" : 1651498968318,
+        "total_time_in_millis" : 61,
+        "source" : {
+          "repository" : "netology_backup",
+          "snapshot" : "my_snapshot_2022.05.02",
+          "version" : "7.17.3",
+          "index" : "test",
+          "restoreUUID" : "lkOn7g66SJWAU_WR3fLRJw"
+        },
+        "target" : {
+          "id" : "zt8GHRkMRkylFnTPs-SKAA",
+          "host" : "172.17.0.2",
+          "transport_address" : "172.17.0.2:9300",
+          "ip" : "172.17.0.2",
+          "name" : "netology_test"
+        },
+        "index" : {
+          "size" : {
+            "total_in_bytes" : 226,
+            "reused_in_bytes" : 0,
+            "recovered_in_bytes" : 226,
+            "recovered_from_snapshot_in_bytes" : 0,
+            "percent" : "100.0%"
+          },
+          "files" : {
+            "total" : 1,
+            "reused" : 0,
+            "recovered" : 1,
+            "percent" : "100.0%"
+          },
+          "total_time_in_millis" : 39,
+          "source_throttle_time_in_millis" : 0,
+          "target_throttle_time_in_millis" : 0
+        },
+        "translog" : {
+          "recovered" : 0,
+          "total" : 0,
+          "percent" : "100.0%",
+          "total_on_start" : 0,
+          "total_time_in_millis" : 14
+        },
+        "verify_index" : {
+          "check_index_time_in_millis" : 0,
+          "total_time_in_millis" : 0
+        }
+      }
+    ]
+  }
+}
+
