@@ -37,7 +37,7 @@
 
 ## Модуль 7. Облачная инфраструктура. Terraform
 
-7.1. [Конфигурация как код](07-terraform-01-intro) 
+7.1. [Конфигурация как код](https://github.com/bolgovsky/virt-homeworks/tree/master/07-terraform-01-intro) 
 
 7.2. [Облачные провайдеры и синтаксис Терраформ](07-terraform-02-syntax)
 
@@ -48,6 +48,18 @@
 7.5. [Введение в Golang](07-terraform-05-golang)
 
 7.6. [Написание собственных провайдеров для Terraform](07-terraform-06-providers)
+
+## Модуль 9. Непрерывная разработка и интеграция
+
+9.1. [Жизненный цикл разработки ПО](https://github.com/bolgovsky/virt-homeworks/tree/master/09-ci-01-intro#readme)
+
+9.2. [Процессы CI/CD: автоматические и ручное тестирование, сборка и доставка в разные окружения.](https://github.com/bolgovsky/virt-homeworks/tree/master/09-ci-02-cicd)
+
+9.3. [Практическое знакомство с Jenkins](Практическое знакомство с Jenkins)
+
+9.4. [TeamCity](TeamCity)
+
+9.5. [Gitlab](Gitlab)
 
 ## Дополнительные материалы
 
