@@ -1,5 +1,11 @@
 # Домашнее задание к занятию "7.2. Облачные провайдеры и синтаксис Terraform."
 
+---
+
+В данном файле приведены **только ответы** ! Т.е. можно искать по **Ответ:**
+
+---
+
 Зачастую разбираться в новых инструментах гораздо интересней понимая то, как они работают изнутри. 
 Поэтому в рамках первого *необязательного* задания предлагается завести свою учетную запись в AWS (Amazon Web Services) или Yandex.Cloud.
 Идеально будет познакомится с обоими облаками, потому что они отличаются. 
@@ -67,13 +73,74 @@ AWS предоставляет достаточно много бесплатн�
 
 В качестве результата задания предоставьте:
 1. Ответ на вопрос: при помощи какого инструмента (из разобранных на прошлом занятии) можно создать свой образ ami?
-1. Ссылку на репозиторий с исходной конфигурацией терраформа.  
- 
----
 
-### Как cдавать задание
+**Ответ:** `packer` позволяет создавать свой собственный образ `ami`. То есть на основе исходного образа(как правило "чистого") готовить собственный, описывая состовляющие в `JSON` формате, например:
+```json
+{
+  "builders": [
+    {
+      "disk_type": "network-nvme",
+      "folder_id": "b1g3jugliqbmg2eomqbj",
+      "image_description": "by packer",
+      "image_family": "centos",
+      "image_name": "centos-7-base",
+      "source_image_family": "centos-7",
+      "ssh_username": "centos",
+      "subnet_id": "e9b3pbss0hbvap24g72q",
+      "token": "",
+      "type": "yandex",
+      "use_ipv4_nat": true,
+      "zone": "ru-central1-a"
+    }
+  ],
+  "provisioners": [
+    {
+      "inline": [
+        "sudo yum -y update",
+        "sudo yum -y install bridge-utils bind-utils iptables curl net-tools tcpdump rsync telnet openssh-server"
+      ],
+      "type": "shell"
+    }
+  ]
+}
+```
+Т.е. на базе YandexCloud мы создаем из образа нужный нам:
+```bash 
 
-Выполненное домашнее задание пришлите ссылкой на .md-файл в вашем репозитории.
+C:\Program Files\Packer>packer validate c:\Users\Денис\PycharmProjects\virt-homeworks\05-virt-04-docker-compose\src\packer\centos-7-base.json
+The configuration is valid.
 
----
+C:\Program Files\Packer>packer build c:\Users\Денис\PycharmProjects\virt-homeworks\05-virt-04-docker-compose\src\packer\centos-7-base.json
+...
+==> Builds finished. The artifacts of successful builds are:
+--> yandex: A disk image was created: centos-7-base (id: fd8q7qlp64isc1p7qcr0) with family name centos
 
+
+C:\Program Files\Packer>yc compute image list
++----------------------+---------------+--------+----------------------+--------+
+|          ID          |     NAME      | FAMILY |     PRODUCT IDS      | STATUS |
++----------------------+---------------+--------+----------------------+--------+
+| fd8q7qlp64isc1p7qcr0 | centos-7-base | centos | f2e5hofc46da1u9fl24s | READY  |
+```
+Главное не забыть удалить использовавшиеся ресурсы после сборки своего образа.
+
+2. Ссылку на репозиторий с исходной конфигурацией терраформа.  
+
+**Ответ:** [Файл main.tf](https://github.com/bolgovsky/virt-homeworks/blob/master/07-terraform-02-syntax/src/terraform/main.tf)
+
+Вывод консоли в результате выполнения:
+```bash
+yandex_compute_instance.vm-01: Creating...
+yandex_compute_instance.vm-01: Still creating... [10s elapsed]
+yandex_compute_instance.vm-01: Still creating... [20s elapsed]
+yandex_compute_instance.vm-01: Still creating... [30s elapsed]
+yandex_compute_instance.vm-01: Creation complete after 32s [id=fhmk9pf9tsl1so8j9p7u]
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+external_ip_address_vm-01 = "51.250.2.144"
+internal_ip_address_vm-01 = "192.168.1.26"
+zone_vm-01 = "ru-central1-a"
+```
