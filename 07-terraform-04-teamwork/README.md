@@ -60,14 +60,18 @@
 **Ngrok**
 ![NGROK](src/pic/atlantis-winx64-ngrok-results-01.PNG)
 
+
 **Atlantis**
 ![ATLANTIS](src/pic/atlantis-winx64-atlantis-results-01.PNG)
+
 
 **Github**
 ![GITHUB](src/pic/atlantis-winx64-github-results-01.PNG)
 
+
 **NO OUTPUT Atlantis**
 ![ATLANTIS](src/pic/atlantis-winx64-nooutput-results-01.PNG)
+
 
 **ERROR** - ошибка запуска через sh (в Windows??!?!?) не смог сходу разобраться как победить, кроме использования Linux))
 
