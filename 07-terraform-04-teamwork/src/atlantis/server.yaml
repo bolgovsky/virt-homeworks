@@ -1,0 +1,46 @@
+# repos lists the config for specific repos.
+repos:
+  # id can either be an exact repo ID or a regex.
+  # If using a regex, it must start and end with a slash.
+  # Repo ID's are of the form {VCS hostname}/{org}/{repo name}, ex.
+  # github.com/runatlantis/atlantis.
+- id: /.*/
+  # branch is an regex matching pull requests by base branch
+  # (the branch the pull request is getting merged into).
+  # By default, all branches are matched
+  branch: /.*/
+
+  # apply_requirements sets the Apply Requirements for all repos that match.
+  apply_requirements: [approved, mergeable]
+
+  # workflow sets the workflow for all repos that match.
+  # This workflow must be defined in the workflows section.
+  workflow: custom
+
+  # allowed_overrides specifies which keys can be overridden by this repo in
+  # its atlantis.yaml file.
+  allowed_overrides: [apply_requirements, workflow, delete_source_branch_on_merge]
+
+  # allowed_workflows specifies which workflows the repos that match
+  # are allowed to select.
+  allowed_workflows: [custom]
+
+  # allow_custom_workflows defines whether this repo can define its own
+  # workflows. If false (default), the repo can only use server-side defined
+  # workflows.
+  allow_custom_workflows: true
+
+  # id can also be an exact match.
+- id: https://github.com/bolgovsky/teamwork-atlantis
+
+# workflows lists server-side custom workflows
+workflows:
+  custom:
+    plan:
+      steps:
+      - init
+      - plan:
+          extra_args: ["-lock", "false"]
+    apply:
+      steps:
+      - apply

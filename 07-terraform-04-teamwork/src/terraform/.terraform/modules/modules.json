@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"vpc","Source":"registry.terraform.io/hamnsk/vpc/yandex","Version":"0.5.0","Dir":".terraform/modules/vpc"}]}
