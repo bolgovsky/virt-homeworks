@@ -57,19 +57,19 @@
 
 Более того, получилось даже пощупать (не до победного(надо было использовать не WIN), но тем не менее - смысл стал понятен!)
 
-**Ngrok**
+* **Ngrok**
 ![NGROK](src/pic/atlantis-winx64-ngrok-results-01.PNG)
 
 
-**Atlantis**
+* **Atlantis**
 ![ATLANTIS](src/pic/atlantis-winx64-atlantis-results-01.PNG)
 
 
-**Github**
+* **Github**
 ![GITHUB](src/pic/atlantis-winx64-github-results-01.PNG)
 
 
-**NO OUTPUT Atlantis**
+* **NO OUTPUT Atlantis**
 ![ATLANTIS](src/pic/atlantis-winx64-nooutput-results-01.PNG)
 
 
