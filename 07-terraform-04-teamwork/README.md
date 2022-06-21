@@ -53,7 +53,7 @@
 
 В качестве результата приложите ссылку на файлы `server.yaml` и `atlantis.yaml`.
 
-**Ответ:** [Файл server.yaml]() , [Файл atlantis.yaml]()
+**Ответ:** [server.yaml](https://github.com/bolgovsky/virt-homeworks/blob/master/07-terraform-04-teamwork/src/atlantis/server.yaml) , [atlantis.yaml](https://github.com/bolgovsky/virt-homeworks/blob/master/07-terraform-04-teamwork/src/atlantis/atlantis.yaml)
 
 Более того, получилось даже пощупать (не до победного(надо было использовать не WIN), но тем не менее - смысл стал понятен!)
 
