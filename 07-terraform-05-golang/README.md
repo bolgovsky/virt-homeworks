@@ -30,7 +30,7 @@
 у пользователя, а можно статически задать в коде.
     Для взаимодействия с пользователем можно использовать функцию `Scanf`:
 
-**Ответ:** 
+**Ответ:**  [3](https://github.com/bolgovsky/virt-homeworks/blob/master/07-terraform-05-golang/src/3.go)
 ```bash
 package main
 
@@ -52,7 +52,7 @@ Program exited.
  
 4. Напишите программу, которая найдет наименьший элемент в любом заданном списке, например:
 
-**Ответ:** 
+**Ответ:** [4](https://github.com/bolgovsky/virt-homeworks/blob/master/07-terraform-05-golang/src/main.go)
 ```bash
 package main
 
@@ -80,7 +80,7 @@ Program exited.
 
 5. Напишите программу, которая выводит числа от 1 до 100, которые делятся на 3. То есть `(3, 6, 9, …)`.
 
-**Ответ:** 
+**Ответ:**  [5](https://github.com/bolgovsky/virt-homeworks/blob/master/07-terraform-05-golang/src/5.go)
 ```bash
 package main
 
