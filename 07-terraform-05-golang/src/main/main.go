@@ -1,7 +1,7 @@
 package main
 
 import ("fmt"
-       "testing"
+       //"testing"
 )
 
 func main() {
@@ -22,20 +22,3 @@ func IntMin(x[]int) int{
 	}
 	return min
 }
-
-func TestMin(t *testing.T) {
-    //test:=[]int{0,1}
-    check := IntMin(([]int{0,1}))
-    if check != 0 {
-        t.Errorf("Error in calculation: min can not be %d", check)
-    }
-}
-
-// OUTPUT
-// 9
-//
-// Program exited.
-
-
-// go test 3.go
-// ?       command-line-arguments  [no test files]

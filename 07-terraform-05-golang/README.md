@@ -140,12 +140,14 @@ Program exited.
 
 Создайте тесты для функций из предыдущего задания. 
 
-**Ответ:** Добавил файл из 4-го задания в main.go функцию, но тест не прошел. Почему не понимаю
+**Ответ:** Сделал два файла, инициализировал puppy(?![хоть бы кто упомянул про это!])
+
+main.go
 ```bash
 package main
 
 import ("fmt"
-       "testing"
+       //"testing"
 )
 
 func main() {
@@ -166,16 +168,38 @@ func IntMin(x[]int) int{
 	}
 	return min
 }
+```
 
-func TestMin(t *testing.T) {
+main_test.go
+```bash
+package main
+
+import (
+       "testing"
+)
+
+
+func testMin(t *testing.T) {
     //test:=[]int{0,1}
     check := IntMin(([]int{0,1}))
     if check != 0 {
         t.Errorf("Error in calculation: min can not be %d", check)
     }
 }
+```
 
+Вывод:
 
-C:\Users\Денис\PycharmProjects\virt-homeworks\07-terraform-05-golang\src>go test -v main.go
-?       command-line-arguments  [no test files]
+```bash 
+
+C:\Users\Денис\PycharmProjects\virt-homeworks\07-terraform-05-golang\src\main>go mod init puppy
+go: creating new go.mod: module puppy
+go: to add module requirements and sums:
+        go mod tidy
+
+C:\Users\Денис\PycharmProjects\virt-homeworks\07-terraform-05-golang\src\main>go test
+testing: warning: no tests to run
+PASS
+ok      puppy   0.035s
+
 ```
