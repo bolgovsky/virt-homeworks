@@ -109,7 +109,7 @@ var re *regexp.Regexp
 			re = regexp.MustCompile(`^[a-zA-Z0-9_-]{1,75}\.fifo$`)
 		} else {
 			re = regexp.MustCompile(`^[a-zA-Z0-9_-]{1,80}$`)
-		}
+		} 
 ```
 
 
