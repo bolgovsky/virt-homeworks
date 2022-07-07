@@ -39,15 +39,15 @@
 
 7.1. [Конфигурация как код](https://github.com/bolgovsky/virt-homeworks/tree/master/07-terraform-01-intro) 
 
-7.2. [Облачные провайдеры и синтаксис Терраформ](07-terraform-02-syntax)
+7.2. [Облачные провайдеры и синтаксис Терраформ](https://github.com/bolgovsky/virt-homeworks/tree/master/07-terraform-02-syntax)
 
-7.3. [Основы и принцип работы Терраформ](07-terraform-03-basic)
+7.3. [Основы и принцип работы Терраформ](https://github.com/bolgovsky/virt-homeworks/tree/master/07-terraform-03-basic)
 
-7.4. [Средства командной работы над инфраструктурой](07-terraform-04-teamwork)
+7.4. [Средства командной работы над инфраструктурой](https://github.com/bolgovsky/virt-homeworks/tree/master/07-terraform-04-teamwork)
 
-7.5. [Введение в Golang](07-terraform-05-golang)
+7.5. [Введение в Golang](https://github.com/bolgovsky/virt-homeworks/tree/master/07-terraform-05-golang)
 
-7.6. [Написание собственных провайдеров для Terraform](07-terraform-06-providers)
+7.6. [Написание собственных провайдеров для Terraform](https://github.com/bolgovsky/virt-homeworks/tree/master/07-terraform-06-providers)
 
 ## Модуль 8. Система управления конфигурациями (Ansible)
 8.1. [Введение в ANSIBLE](https://github.com/bolgovsky/ansible)

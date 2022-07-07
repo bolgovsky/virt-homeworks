@@ -18,6 +18,7 @@
 [https://github.com/hashicorp/terraform-provider-aws.git](https://github.com/hashicorp/terraform-provider-aws.git).
 Просто найдите нужные ресурсы в исходном коде и ответы на вопросы станут понятны.  
 
+---
 
 1. Найдите, где перечислены все доступные `resource` и `data_source`, приложите ссылку на эти строки в коде на 
 гитхабе.   
@@ -50,6 +51,8 @@ type Provider struct {
 
 и `DataSourcesMap`: [ссылка на строку в коде на 
 гитхабе - DataSourcesMap](https://github.com/hashicorp/terraform-provider-aws/blob/87b2ab2a3c0b420f84a3942664205109dbcde609/internal/provider/provider.go#L425)
+
+---
 
 2. Для создания очереди сообщений SQS используется ресурс `aws_sqs_queue` у которого есть параметр `name`. 
     * С каким другим параметром конфликтует `name`? Приложите строчку кода, в которой это указано.
@@ -87,6 +90,7 @@ var (
 name- (Необязательно) Имя очереди. Имена очередей должны состоять только из прописных и строчных букв ASCII, цифр, знаков подчеркивания и дефисов и должны содержать от 1 до 80 символов. 
 Для очереди FIFO (первым поступил – первым обслужен) имя должно заканчиваться .fifoсуффиксом. Если его не указать, Terraform присвоит случайное уникальное имя. Конфликты сname_prefix
 ```
+
 2. порыться в коде - в какой-то старой ветке нашел: 
 ```bash
 func validateSQSQueueName(v interface{}, k string) (ws []string, errors []error) {
@@ -101,6 +105,7 @@ func validateSQSQueueName(v interface{}, k string) (ws []string, errors []error)
 	return
 }
 ```
+
 В ветке ``main`` ссылок на проверку не нашел, только в функции `resourceQueueCustomizeDiff` есть :
 ```bash
 var re *regexp.Regexp
@@ -112,6 +117,7 @@ var re *regexp.Regexp
 		} 
 ```
 
+--- 
 
 ## Задача 2. (Не обязательно) 
 В рамках вебинара и презентации мы разобрали как создать свой собственный провайдер на примере кофемашины. 
